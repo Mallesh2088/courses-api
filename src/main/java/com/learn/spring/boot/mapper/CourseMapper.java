@@ -9,4 +9,8 @@ import java.util.List;
 @Mapper
 public interface CourseMapper {
     List<CourseDTO> toCourseDTOs(List<Courses> courses);
+
+    Courses toCourses(CourseDTO courseDTO);
+
+    CourseDTO toCourseDTO(Courses course);
 }

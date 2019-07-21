@@ -6,7 +6,6 @@ import com.learn.spring.boot.jpa.entity.repository.CoursesRepository;
 import com.learn.spring.boot.model.CourseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -27,4 +26,8 @@ public class CoursesService {
         return courseMapper.toCourseDTOs(coursesList);
     }
 
+    public CourseDTO addCourse(CourseDTO courseDTO) {
+        Courses course = coursesRepository.save(courseMapper.toCourses(courseDTO));
+        return courseMapper.toCourseDTO(course);
+    }
 }
